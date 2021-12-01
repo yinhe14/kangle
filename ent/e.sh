@@ -21,7 +21,7 @@ chkconfig --level 2345 nginx off 2&> /dev/null
 #yum install
 yum -y install libjpeg-turbo libtiff libpng unzip
 #kangle install
-URL="http://github.itzmx.com/1265578519/kangle/master/ent/kangle-ent-$VERSION$ARCH.tar.gz"
+URL="https://github.com/yinhe14/kangle/raw/master/ent/kangle-ent-$VERSION$ARCH.tar.gz"
 wget $URL -O kangle.tar.gz
 tar xzf kangle.tar.gz
 cd kangle
@@ -29,7 +29,7 @@ $PREFIX/bin/kangle -q
 killall -9 kangle
 sleep 3
 mkdir -p $PREFIX
-wget http://github.itzmx.com/1265578519/kangle/master/ent/license/Ultimate/license.txt -O $PREFIX/license.txt
+wget https://github.com/yinhe14/kangle/raw/master/ent/license/Ultimate/license.txt -O $PREFIX/license.txt
 ./install.sh $PREFIX
 $PREFIX/bin/kangle
 echo "$PREFIX/bin/kangle" >> /etc/rc.d/rc.local
@@ -46,12 +46,12 @@ chkconfig ip6tables off 2&> /dev/null
 systemctl stop firewalld 2&> /dev/null
 systemctl disable firewalld 2&> /dev/null
 rm -rf $PREFIX/www/index.html
-wget http://github.itzmx.com/1265578519/kangle/master/easypanel/index.html -O $PREFIX/www/index.html
+wget https://github.com/yinhe14/kangle/raw/master/easypanel/index.html -O $PREFIX/www/index.html
 $PREFIX/bin/kangle -q
 $PREFIX/bin/kangle -z /var/cache/kangle
 cd ..
 #dso install
-wget http://github.itzmx.com/1265578519/kangle/master/dso/kangle-dso-$DSOVERSION.zip -O kangle-dso.zip
+wget https://github.com/yinhe14/kangle/raw/master/dso/kangle-dso-$DSOVERSION.zip -O kangle-dso.zip
 unzip -o kangle-dso.zip
 cd dso
 \cp -rf bin $PREFIX
